@@ -43,6 +43,6 @@ while w != x:
     nw += 1
     w -= 1
 
-#print(w, nw, steps)
+print(w, nw, steps)
 steps += y-nw
 print(steps)
