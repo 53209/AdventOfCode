@@ -1,20 +1,20 @@
 # INPUT
-input = open("example_input.txt")
+input = open("input.txt")
 
 firewall = {}
-for _ in range(0, 4):
+for _ in range(0, 43):
     n = str(input.readline()).strip().split()
     firewall[int(n[0])] = int(n[1])
 
 
-for i in range(0, 7):
+for i in range(0, 85):
     if i not in firewall:
         firewall[i] = 0
 
 print(firewall)
 
 severity = 0
-for picosecond in range(0, 7):
+for picosecond in range(0, 84):
     layerRange = firewall[picosecond]
 
     if layerRange == 0:
