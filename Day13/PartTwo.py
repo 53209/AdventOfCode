@@ -12,9 +12,10 @@ for i in range(0, 85):
 
 scannerPos = 0
 severity = 0
-for delay in range(105919, 30000):
+for delay in range(1000000, 10000000):
     severity = 0
-    for picosecond in range(0, 84):
+    caught = False
+    for picosecond in range(0, 85):
 
         layerRange = firewall[picosecond]
 
@@ -24,8 +25,9 @@ for delay in range(105919, 30000):
         scannerPos = (picosecond+delay) % ((layerRange-1)*2)
 
         if scannerPos == 0:
+            caught = True
             severity += (picosecond+delay) * layerRange
 
-    if severity == 0:
-        first = False
+    if severity == 0 and not caught:
         print(delay)
+        break
