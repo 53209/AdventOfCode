@@ -7,7 +7,7 @@ for _ in range(0, 4):
     firewall[int(n[0])] = int(n[1])
 
 
-for i in range(0, 85):
+for i in range(0, 7):
     if i not in firewall:
         firewall[i] = 0
 
@@ -35,7 +35,7 @@ for picosecond in range(0, 7):
     # print("Picosecond: %s,\n LayerRange: %s,\n current ScannerPos: %s, \n next ScannerPos: %s" % (picosecond, layerRange, scannerPos, next_scannerPos))
 
     # Calculate severity
-    if next_scannerPos == 0:    # caught
+    if next_scannerPos == 1 and coefficient != -1:    # caught
         print("Picossecond: %s, \n severity: %s, \n layerrange: %s" % (picosecond, severity, layerRange))
         severity += picosecond*layerRange
 
